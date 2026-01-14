@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background: linear-gradient(135deg, #1a2980, #26d0ce);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+.header {
+    background: linear-gradient(135deg, #2c3e50, #1a2980);
+    color: white;
+    padding: 25px 30px;
+    text-align: center;
+}
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.header-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.header-buttons .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2c3e50, #1a2980);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.header-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+.header-buttons .btn a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+.content {
+    display: flex;
+    min-height: 500px;
+}
+.form-section {
+    flex: 1;
+    padding: 30px;
+    border-right: 1px solid #eee;
+}
+.summary-section {
+    flex: 1;
+    padding: 30px;
+    background: #f9fafc;
+}
+.section-title {
+    color: #2c3e50;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #3498db;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.form-group {
+    margin-bottom: 25px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.form-control {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.form-control:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+.btn-submit {
+    background: linear-gradient(135deg, #3498db, #1a2980);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-cancel {
+    background: #95a5a6;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+}
+.btn-cancel:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(149, 165, 166, 0.4);
+}
+.error {
+    background: #fee;
+    color: #e74c3c;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #e74c3c;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.success {
+    background: #eafaf1;
+    color: #27ae60;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #27ae60;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeIn 0.5s, slideIn 0.5s;
+}
+.summary-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+}
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.summary-item:last-child {
+    border-bottom: none;
+}
+.summary-label {
+    color: #7b8a9a;
+    font-weight: 500;
+}
+.summary-value {
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: left;
+    max-width: 200px;
+    overflow-wrap: break-word;
+}
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    .form-section {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+    .btn-submit, .btn-cancel {
+        width: 100%;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideIn {
+    from { transform: translateY(-20px); }
+    to { transform: translateY(0); }
+}
+.booking-id-display {
+    background: #f1f2f6;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 2px dashed #3498db;
+}
+.customer-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.customer-info p {
+    margin: 5px 0;
+}
+.flight-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.flight-info p {
+    margin: 5px 0;
+}
+.cost-calculation {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.cost-calculation p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.form-col {
+    flex: 1;
+}
